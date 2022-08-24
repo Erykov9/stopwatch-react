@@ -1,0 +1,17 @@
+@import '../../styles/main.scss';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  padding-bottom: 35px;
+}
+
+.btns {
+  align-items: center;
+  padding-top: 35px;
+}
