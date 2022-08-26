@@ -4,23 +4,23 @@ import React, { useState, useEffect } from 'react';
 
 const Timer = () => {
   const [time, setTime] = useState(0);
-  const [running, setRunning] = useState(false);
+  const [run, setRun] = useState(false);
 
-
+  
+  
   useEffect(() => {
     let interval;
 
-    if(running) {
+    if(run) {
       interval = setInterval(() => {
         setTime((prevValue) => prevValue + 10);
       }, 10);
-    } else if (!running) {
-      clearInterval(interval);
+    } else if (!run) {
+      clearInterval(interval)
     }
     return () => clearInterval(interval);
-  }, [running]);
 
-  
+  }, [run]);
 
 
   return (
@@ -33,8 +33,8 @@ const Timer = () => {
         <span>{("0" + ((time / 1) % 100)).slice(-2)}</span>
       </p>
       <div className={styles.btns}>
-        <Button onClick={() => setRunning(true)} btnText="Start"/>
-        <Button onClick={() => setRunning(false)} btnText="Stop"/>
+        <Button onClick={() => setRun(true) } btnText="Start"/>
+        <Button onClick={() => setRun(false)} btnText="Stop"/>
         <Button onClick={() => setTime(0)} btnText="Reset"/>
       </div>
     </div>
